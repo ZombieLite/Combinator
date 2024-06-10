@@ -24,6 +24,8 @@ public class ItemMoveDnD : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         item.GetComponent<Image>().color = new Color(255f, 255f, 255f, 0.7f);
         GetComponent<Image>().color = new Color(255f, 255f, 255f, 0.5f);
         item.GetComponent<Image>().raycastTarget = false;
+        item.GetComponent<Image>().preserveAspect = true;
+        item.name = gameObject.transform.parent.gameObject.name;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -35,6 +37,6 @@ public class ItemMoveDnD : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     {
         item.GetComponent<Image>().raycastTarget = true;
         img.color = new Color(255f, 255f, 1.0f);
-        Destroy(item);
+        Destroy(item, 0.001f);
     }
 }

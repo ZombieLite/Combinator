@@ -356,11 +356,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4553fae256d63584695cdb53a438b1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: 2
-  brick:
-  - {fileID: -855298285791758126, guid: 2941fc6e97a396b428650538c30df154, type: 3}
-  wood:
-  - {fileID: -855298285791758126, guid: a67c30883c8486849bbd32a3db46e6d3, type: 3}
+  items: 10
+  atlas_brick: {fileID: 100100200, guid: 222a2687f11a54242884f16f985200a0, type: 3}
+  atlas_wood: {fileID: 100100200, guid: 06ea177cea10eb143aa3cd12133535cb, type: 3}
+  atlas_eats: {fileID: 100100200, guid: 438cd98bd8af42948b172d2dc69894f7, type: 3}
+  atlas_energy: {fileID: 100100200, guid: e19ca4eea851915468c6d6e96becfe78, type: 3}
+  atlas_ingot: {fileID: 100100200, guid: 8a2d4ddf26bde9f41a66b0a9ba92ac26, type: 3}
+  atlas_instr: {fileID: 100100200, guid: 54740030f2b324a41bc7f973ab6c28a2, type: 3}
+  atlas_plate: {fileID: 100100200, guid: 4da254839150e274881a2f04c26b8593, type: 3}
+  atlas_ruda: {fileID: 100100200, guid: c70b8cd4288899543bbcbbd63f90aa48, type: 3}
+  atlas_thread: {fileID: 100100200, guid: f42a108b37ae6964c9b8efafb01fa6d0, type: 3}
+  atlas_write: {fileID: 100100200, guid: 893db63f45127bc4bafb01df3ab37b51, type: 3}
 --- !u!1 &8145020508442000777
 GameObject:
   m_ObjectHideFlags: 0

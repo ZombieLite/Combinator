@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Runtime.CompilerServices;
 
 public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -60,6 +59,8 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
         //Effect
         draggedImage.GetComponent<Image>().color = new Color(165f, 0f, 234f, 0.7f);
+        draggedImage.GetComponent<Image>().preserveAspect = true;
+        draggedImage.name = gameObject.name;
         GetComponent<Image>().color = new Color(255f, 0f, 0f, 0.5f);
 
 
