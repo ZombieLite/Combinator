@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
-using UnityEditor;
 
 public class Slot : MonoBehaviour, IDropHandler
 {
@@ -11,12 +9,20 @@ public class Slot : MonoBehaviour, IDropHandler
 
     ScoreStatic _score;
 
+    private bool _isPaused;
+    private void Awake() => PauseOnEnable.EventPause.AddListener(pauseScript);
+    private void pauseScript(bool _pause) => _isPaused = !_pause;
+    private SoundManager _sound => gameObject.transform.parent.GetComponent<SoundManager>();
+
     public void Start()
     {
         _score = ObjScore.GetComponent<ScoreStatic>();
     }
     public void OnDrop(PointerEventData eventData)
     {
+        if (_isPaused)
+            return;
+
         if (eventData.pointerDrag != null)
         {
             if (gameObject.transform.GetComponent<Image>().sprite != null)
@@ -43,8 +49,13 @@ public class Slot : MonoBehaviour, IDropHandler
 
             if (child != null)
             {
+                _sound.PlaySound(2, 0.5f, true, false);
                 GameObject item = Instantiate(gameObject, gameObject.transform);
                 item.AddComponent<ItemMoveDnD>();
+                item.AddComponent<SoundManager>();
+                item.AddComponent<AudioSource>();
+                item.GetComponent<SoundManager>().randSound = _sound.randSound;
+
                 item.GetComponent<RectTransform>().localPosition = Vector2.zero;
                 item.GetComponent<Image>().sprite = child.GetComponent<Image>().sprite;
                 item.GetComponent<Image>().color = new Color(255f, 255f, 255f, 1.0f);
@@ -77,8 +88,10 @@ public class Slot : MonoBehaviour, IDropHandler
 
         string strNewText = iName.ToString() + "_0";
 
-        string atlasPath = "Assets/img/item/" + szNamePost + "/" + szNamePost + ".spriteatlasv2";
-        SpriteAtlas atlas = AssetDatabase.LoadAssetAtPath<SpriteAtlas>(atlasPath);
+        string atlasPath = "img/item/" + szNamePost + "/" + szNamePost;
+
+        SpriteAtlas atlas = Resources.Load<SpriteAtlas>(atlasPath);
+
         gameObject.GetComponent<Image>().sprite = atlas.GetSprite(strNewText);
 
         gameObject.transform.name = szName;

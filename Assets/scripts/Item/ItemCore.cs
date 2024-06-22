@@ -11,7 +11,7 @@ public class ItemCore : MonoBehaviour
         if (stopped)
             return;
 
-        if (this.transform.position.x >= 7)
+        if (this.transform.position.x >= 6)
            return;
 
 

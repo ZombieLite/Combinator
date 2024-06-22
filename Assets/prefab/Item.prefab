@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.3822, y: 0.191}
-  m_SizeDelta: {x: 110.22, y: 147.7647}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 57, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &546371228374322533
 CanvasRenderer:
@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.38251, y: 0.1909}
-  m_SizeDelta: {x: 110.22, y: 150.8215}
+  m_AnchoredPosition: {x: 0.0165, y: -2.4144}
+  m_SizeDelta: {x: 68.5821, y: 84.789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6376566086586091681
 CanvasRenderer:
@@ -167,6 +167,8 @@ GameObject:
   - component: {fileID: 4918433662770879035}
   - component: {fileID: 2409773793517188047}
   - component: {fileID: 3377494809909907536}
+  - component: {fileID: 355081691158507149}
+  - component: {fileID: 1622339903304001047}
   m_Layer: 5
   m_Name: Item
   m_TagString: CardsFrame
@@ -193,8 +195,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 135, y: 200}
+  m_AnchoredPosition: {x: -45, y: 25}
+  m_SizeDelta: {x: 70, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7893282158027289279
 CanvasRenderer:
@@ -281,7 +283,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 61.635223, y: 0.044021606}
+  m_Offset: {x: 31.703644, y: -2.3194885}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -291,7 +293,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11.51239, y: 199.6583}
+  m_Size: {x: 5.6743774, y: 84.783875}
   m_EdgeRadius: 0
 --- !u!114 &1458793201400843087
 MonoBehaviour:
@@ -367,6 +369,129 @@ MonoBehaviour:
   atlas_ruda: {fileID: 100100200, guid: c70b8cd4288899543bbcbbd63f90aa48, type: 3}
   atlas_thread: {fileID: 100100200, guid: f42a108b37ae6964c9b8efafb01fa6d0, type: 3}
   atlas_write: {fileID: 100100200, guid: 893db63f45127bc4bafb01df3ab37b51, type: 3}
+--- !u!82 &355081691158507149
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668705050687783497}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1622339903304001047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668705050687783497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e04f15b3201f74483b0e031efbc43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: f01411ec400e8764bbba36d0bd75ee4d, type: 3}
+  randSound:
+  - soundArray:
+    - {fileID: 8300000, guid: 1d2324c68fe9cf245bba405a9d874bbd, type: 3}
+    - {fileID: 8300000, guid: 97c138a6f9c956346b48b70b0bc1e2b6, type: 3}
+  - soundArray:
+    - {fileID: 8300000, guid: 3300146c2da41de45a9293536f9e36af, type: 3}
+    - {fileID: 8300000, guid: 96faf554181a1c54ab0567612c3bb41c, type: 3}
+    - {fileID: 8300000, guid: bd9d6a7c224dee04880518c50f70d1b7, type: 3}
+    - {fileID: 8300000, guid: 3c7844b29f23ea74c9e006ade95e2957, type: 3}
+  - soundArray:
+    - {fileID: 8300000, guid: fe9e777e0b933f54a84a648c42d2be57, type: 3}
+    - {fileID: 8300000, guid: 61e69e5b75cd7a54ca4d3f66acf2ae24, type: 3}
 --- !u!1 &8145020508442000777
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +590,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -33.518616, y: 0.48666382}
+  m_Offset: {x: -16.920898, y: -2.314972}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -475,5 +600,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 68.03723, y: 199.22394}
+  m_Size: {x: 34.841797, y: 84.823425}
   m_EdgeRadius: 0

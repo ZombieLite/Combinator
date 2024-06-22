@@ -4,19 +4,23 @@ using UnityEngine.EventSystems;
 
 public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    private RectTransform rectTransform;
-    private Image image;
     private GameObject draggedImage;
     private Canvas canvas;
 
-    private void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        image = GetComponent<Image>();
-    }
+    private bool _isPaused;
+    private SoundManager _sound => GetComponent<SoundManager>();
+    private Image image => GetComponent<Image>();
+    private RectTransform rectTransform => GetComponent<RectTransform>();
+
+    private void Awake() => PauseOnEnable.EventPause.AddListener(pauseScript);
+
+    private void pauseScript(bool _pause) => _isPaused = !_pause;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (_isPaused)
+            return;
+
         canvas = GetComponentInParent<Canvas>();
         draggedImage = Instantiate(this.gameObject, rectTransform);
         draggedImage.transform.SetParent(canvas.transform, false);
@@ -67,15 +71,32 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
         draggedImage.GetComponent<Image>().raycastTarget = false;
         draggedImage.GetComponent<Image>().sprite = this.image.sprite;
+
+        _sound.PlaySound(2, 0.5f, true, false);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        draggedImage.GetComponent<RectTransform>().anchoredPosition += eventData.delta;
+        if (_isPaused)
+            return;
+
+        // Cursor position
+        // ѕолучаем позицию курсора мыши
+        Vector3 mousePosition = Input.mousePosition;
+
+        // ѕреобразуем позицию курсора из экранных координат в мировые координаты
+        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        draggedImage.transform.position = new Vector3(worldMousePosition.x, worldMousePosition.y, draggedImage.transform.position.z);
+        //draggedImage.GetComponent<RectTransform>().anchoredPosition += eventData.delta;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (_isPaused)
+            return;
+
+        _sound.PlaySound(2, 0.5f, true, true);
         draggedImage.GetComponent<Image>().raycastTarget = true;
         GetComponent<Image>().color = new Color(255f, 255f, 1.0f);
         Destroy(draggedImage);
